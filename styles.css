@@ -1,191 +1,162 @@
-/* index.css */
-* {
+html {
+  scroll-behavior: smooth;
+}
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+/* NAVBAR BASE */
+.nav-icon {
+  height: 3rem;     /* matches nav link size */
+  width: auto;
+  vertical-align: middle;
 }
 
-body {
-  line-height: 1.5;
+.navbar {
   display: flex;
-  flex-direction: column;
-  background-color: #eff6ff;
-}
-
-
-/* ------------------------------
-   NAVBAR
------------------------------- */
-header {
-  background-color: #1f64fa;
+  justify-content: space-between;
+  align-items: center;
   padding: 15px 5%;
+  background-color: #001644;
 }
 
-nav ul {
+
+.nav-links {
   list-style: none;
   display: flex;
-  align-items: center;
-  gap: 100px;
-  justify-content: center;
+  gap: 40px;
+  transition: all 0.3s ease;
 }
 
-nav a {
+.nav-links a {
+  color: white;
   text-decoration: none;
-  color: #ffffff;
-  font-size: 1rem;
-  align-items: center;
-  
-}
-nav a:hover {
-  background-color: #2563eb; /* or any color you want */
-  border-radius: 10px;
-
+  font-size: 1.3rem;
 }
 
-nav a.active {
-  background-color: #9ec2f8;  /* highlight current page */
-  border-radius: 10px;
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+.nav-links a.active {
+  background: #9ec2f8;
+  color: black;
   padding: 5px 10px;
+  border-radius: 6px;
+}
+nav, .hero, .hero h1 {
+    margin: 0;
+    padding: 0;
 }
 
-/* resize your PNG logo */
-.nav-icon {
-  width: 28px;   /* adjust here if needed */
-  height: auto;
-  display: block;
-}
-
-/* ------------------------------
-   HERO SECTION
------------------------------- */
+/* Hero Section */
 .hero {
-  display: flex;
-  flex-wrap: wrap; /* allows items to wrap on small screens */
-  align-items: flex-start; /* better than center for text-image alignment */
-  justify-content: space-between;
-  padding: 40px 5%;
-  gap: 20px; 
-  max-width: 1200px;
-  margin: 0 auto;  
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-image: url(/images/cleaning-services.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: block;
 }
 
 .hero-text {
-  flex: 1 1 500px; /* allows flexibility with a base width */
-  display: flex;
-  flex-direction: column;   /* stack h1, p, h2, ul vertically */
-  align-items: center;      /* horizontally center everything */
-  text-align: center;       /* center text inside elements */
-  background: linear-gradient(135deg, #ffffff 0%, #cee5fa 100%);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  padding: 30px 20px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 50px;
+  max-width: 800px;
+  text-align: center;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(20%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-/* ONLY apply float on hover */
 .hero-text:hover {
-  transform: translateY(-10px); /* lifts the whole text container */
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15); /* deeper shadow */
+  transform: translateY(0);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.5);
 }
-
 .hero-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  color: #000000;
-  font-weight: 700;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
-  font-family: 'Montserrat', sans-serif;
-  display: block;
- 
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.hero-text p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
 }
 .accent-text {
-  color: #0501d4; /* matches CTA button color */
+  color: #ffcc00;
 }
-
-.hero-text p {
-  margin-bottom: 25px;
-  color: #000000;
-  line-height: 1.8;
-  
-}
-
-.hero-text ul {
-  margin-left: 20px;
-  margin-bottom: 25px;
-  line-height: 1.6;
-  color: #000000;
-  list-style: none;
-}
-
-.hero-text h1, 
-.hero-text h2, 
-.hero-text p, 
-.hero-text ul {
-  padding-left: 0;
-  margin-left: 0;
-}
-
-.cta-button {
-  display: block;   
-  margin: 20px auto 0;
-  padding: 12px 20px;
-  background: #2563eb;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+.hero-text span {
   font-weight: bold;
-  transition: background 0.3s ease;
 }
-.cta-button:active {
-  transform: scale(0.95);
+.hero-text h2 {
+  font-size: 2rem;
 }
-
-
+.hero-text ul {
+  list-style: none;
+  padding: 0;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;   /* easiest way */
+}
+.cta-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #ffcc00;
+  color: black;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
 .cta-button:hover {
-  background: #000000;
+  background-color: #1c44c8;
 }
 
-/* hero image */
-.hero-image img {
-  max-width: 500px;
-  width: 100%;
-  border-radius: 8px;
-  height: 580px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  transform: perspective(1000px) rotateX(2deg) rotateY(-2deg);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.hero-image img:hover {
-  transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-}
-
-/* ------------------------------
-   FOOTER
------------------------------- */
+/* FOOTER */
 footer {
-  background-color: #1f64fa;
-  padding: 20px 5%;
+  background-color: #001644;
+  color: white;
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
-}
-footer p {
-  color: #ffffff;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-/* ------------------------------
-   RESPONSIVE DESIGN
------------------------------- */
+
+
+
+
+/* MOBILE VIEW */
 @media (max-width: 768px) {
-  .hero {
-    flex-direction: column; /* stack on smaller screens */
+  .nav-links {
+    display: none;              /* hidden by default */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #1f64fa;
+    width: 100%;
+    flex-direction: column;
+    padding: 20px 0;
     text-align: center;
+    gap: 20px;
   }
 
-  nav ul {
-    justify-content: center;
+  .nav-links.active {
+    display: flex;              /* show when menu is toggled */
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
