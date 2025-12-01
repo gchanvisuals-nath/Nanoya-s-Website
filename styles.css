@@ -149,6 +149,8 @@ footer {
     padding: 20px 0;
     text-align: center;
     gap: 20px;
+    z-index: 9999; /* <-- add this */
+    background-color: #1f64fa; /* make sure it's not transparent */
   }
 
   .nav-links.active {
